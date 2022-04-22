@@ -1,0 +1,28 @@
+<mat-card  class="card__container">
+    <div class="card__content-img">
+        <img  class="card__img" src="assets/imgs/{{imgType}}" alt="">
+    </div>
+    <div class="card__content-title">
+        <mat-card-title>
+            {{ title }}
+        </mat-card-title> 
+    </div>
+    <div class="card__content-description">
+        <mat-card-content>
+           <p>{{ description }}</p>
+            
+        </mat-card-content>
+    </div>
+    <div class="card__content-price">
+        <span>{{ price | currency: 'BRL'}}</span>
+    </div>
+    <div class="card__content-button">
+        
+            <app-button
+            [type]="'card'"
+            [label]="'Comprar'"
+            (click)="purchaseOffer(id)"
+            ></app-button>
+        
+    </div>
+</mat-card>

@@ -1,0 +1,26 @@
+.buttons__cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons__content-home {
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+}
+
+.buttons__home{
+    width: 100%;
+    height: 56px;
+}
+
+.buttons__content-card {
+    
+}
+
+.buttons__card {
+    height: 36px;
+    width: 100%;
+    
+}

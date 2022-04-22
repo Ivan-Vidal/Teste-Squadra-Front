@@ -1,15 +1,14 @@
 <mat-toolbar color="primary">
     <header class="header__container">
         <div class="header__content-logo">
-            <img src="https://www.squadra.com.br/wp-content/themes/squadraTheme/img/logos-squadra/logo-white-4.png" class="header__logo" alt="Squadra digital">
+            <img src="assets/imgs/logo-white-4.png" class="header__logo" alt="Squadra digital">
         </div>
         <div class="header__content-title">
           <span>TESTE FRONT-END</span><span class="header__title-hidden">ANGULAR SQUADRA</span>
         </div>
         <div class="header__content-cart">
-            <a class="header__link-cart">
-                <mat-icon>shopping_cart</mat-icon>
-            </a>
+            <app-button
+            [type]="'icon'"></app-button>
         </div>
     </header>
 </mat-toolbar>

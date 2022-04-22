@@ -1,0 +1,25 @@
+<div>
+
+    <div *ngIf="type === 'icon'">
+        <button mat-icon-button class="buttons__cart">
+            <mat-icon matBadge="1" matBadgeColor="warn">shopping_cart</mat-icon>
+        </button>
+    </div>
+
+    <div *ngIf="type === 'card'" class="buttons__content-card" >
+        <button class="buttons__card" 
+        mat-flat-button
+        color="primary"
+        > {{ label }}
+        </button> 
+    </div>
+
+    <div *ngIf="type === 'flat'" class="buttons__content-home">
+        <button class="buttons__home" 
+        mat-flat-button
+        color="primary"
+        > {{ label }}
+        </button> 
+    </div>
+   
+</div>

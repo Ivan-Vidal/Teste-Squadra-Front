@@ -1,0 +1,24 @@
+<div class="home__container">
+    <main>
+        <div class="home__content-header">
+            <div class="home__content-img">
+                <img src="assets/imgs/home-icon.svg"  class="home__img" alt="testes">
+            </div>
+            <div class="home__content-title">
+                <h1>
+                    <span class="break__line">Venha conhecer as</span> 
+                    <span class="break__line"> melhores ofertas </span> 
+                    <span class="break__line">para Hoteis, Gastronomia</span>
+                    <span class="break__line"> e Entretenimento</span>
+                </h1>
+            </div>
+        </div>
+        <div class="home__content-button">
+            <app-button
+            [type]="'flat'"
+            [label]="'Conheça já'"
+            (click)="navigateToOfferrs()"
+            ></app-button>
+        </div>
+    </main>
+</div>
