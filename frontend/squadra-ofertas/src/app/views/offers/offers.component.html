@@ -1,0 +1,59 @@
+<div class="offers__container">
+    <main class="offers__main-content">
+        <div>
+            <h2>Hoteis</h2>
+            <mat-divider></mat-divider>
+            <div class="offers__content-cards" >
+                <div  *ngFor="let offer of allOffers"  >
+                    <div *ngIf="offer.categoria.id === 1">
+                        <app-card-offer
+                            [type]="'hotel'"
+                            [title]="offer.titulo"
+                            [description]="offer.descricaoBreve"
+                            [price]="offer.valor"
+                            [id]="offer.id"
+                        ></app-card-offer>
+                    </div>
+                </div>
+            </div>
+            
+            <div>
+                <h2>Gastronomia</h2>
+                <mat-divider></mat-divider>
+                <div class="offers__content-cards" >
+                    <div  *ngFor="let offer of allOffers"  >
+                        <div *ngIf="offer.categoria.id === 2">
+                            <app-card-offer
+                                [type]="'rest'"
+                                [title]="offer.titulo"
+                                [description]="offer.descricaoBreve"
+                                [price]="offer.valor"
+                                [id]="offer.id"
+                            ></app-card-offer>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h2>Entreterimento</h2>
+                <mat-divider></mat-divider>
+                <div class="offers__content-cards" >
+                    <div  *ngFor="let offer of allOffers"  >
+                        <div *ngIf="offer.categoria.id === 3">
+                            <app-card-offer
+                                [type]="'entr'"
+                                [title]="offer.titulo"
+                                [description]="offer.descricaoBreve"
+                                [price]="offer.valor"
+                                [id]="offer.id"
+                            ></app-card-offer>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            
+        </div>
+    </main>
+    <button routerLink="/home"> voltar </button>
+</div>
