@@ -1,7 +1,7 @@
 # Teste Front-end Squadra Digital
 
 <p align = "center">
-  <img src = "./frontend/squadra-ofertas/src/assets/imgs/logo-white-4.svg" width = "150">
+  <img src = "https://www.squadra.com.br/wp-content/themes/squadraTheme/img/logos-squadra/logo-white-4.png" width = "300">
 </p>
 
 ## 🖥 Preview
@@ -12,15 +12,13 @@
 
 ---
 
-## 📖 About
+## 📖 Sobre
 
-This is a project developed during **[Next Level Week](https://nextlevelweek.com/)**, carried out by **[@Rocketseat](https://github.com/Rocketseat)** during 3 to 9 August 2020.
-
-The project proposal is an application that can connect who wants to learn, wants to teach. You can find students for what you teach, or find the teacher for that subject you always wanted to learn more about! Without any area limitation !!
+  Projeto foi desenvolvido a pedido da Squadra Digital, para testar minhas habilidades como programador front-end com o Angular 12+.
 
 ---
 
-## 🚀 Technologies used
+## 🚀 Tecnologias usadas
 
 The project is developed using the following technologies:
 
@@ -29,7 +27,6 @@ The project is developed using the following technologies:
 - CSS
 - JavaScript
 - TypeScript
-- Node.js
 - NPM
 - Json Server
 - Material Design
@@ -37,22 +34,29 @@ The project is developed using the following technologies:
 
 ---
 
-## ⌨ How to execute the project
+## ⌨ Como executar o projeto
 
 #### Clone the repository
 git clone `https://github.com/Ivan-Vidal/Teste-Squadra-Front.git`
 
-#### Enter directory
+#### Entre no diretorio
 `cd squadra-ofertas`
 
-#### Download dependencies
+#### Download dependências
 `npm install`
 
-#### Run the server
+#### Rode o Serve
 `ng serve`
 
-#### That done, open your browser and go to `https://localhost:4200/`
+#### Navegue até o arquivo
+`db.json`
+
+#### Execute o comando
+`json-server --watch db.json --port 3004`
+
+
+#### Está Pronto, Abra seu navegador favorito e navegue até `https://localhost:4200/`
 
 ---
 
-Developed with 💜 by ivan vidal
+Developed with 💜 by Ivan Vidal
