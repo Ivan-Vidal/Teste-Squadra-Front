@@ -1,0 +1,15 @@
+<div class="modal__container">
+    <div mat-dialog-content><mat-icon class="modal__">add_shopping_cart</mat-icon></div>
+    <h1 mat-dialog-title>Oferta Adicionada</h1>
+    <div mat-dialog-actions class="modal__group-button">
+        <app-button
+        [type]="'card'"
+        [label]="'Finalizar a compra'"
+        (click)="goCart()"
+        ></app-button>
+        <div class="modal__link-back">
+            <a   mat-dialog-close routerLink="/offers">Continuar comprando</a>
+        </div>
+    </div>
+</div>
+
