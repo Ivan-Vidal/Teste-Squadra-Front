@@ -1,14 +1,14 @@
 # Teste Front-end Squadra Digital
 
 <p align = "center">
-  <img src = "./frontend/squadra-ofertas/src/assets/imgs/logo-white-4.svg" width = "150">
+  <img src = "../assets/imgs/logo-white-4.svg" width = "150">
 </p>
 
 ## 🖥 Preview
 
-<p align = "center">
-  Demo disponivél em: https://github.com/Ivan-Vidal/Teste-Squadra-Front.git
-</p>
+
+  Demo disponivél em: `https://github.com/Ivan-Vidal/Teste-Squadra-Front.git`
+
 
 ---
 

@@ -8,7 +8,10 @@
         </div>
         <div class="header__content-cart">
             <app-button
-            [type]="'icon'"></app-button>
+                [counter]="counter"
+                [type]="'icon'"
+                (click)="navigateToCart()"
+            ></app-button>
         </div>
     </header>
 </mat-toolbar>

@@ -16,23 +16,47 @@
     padding: 10px 0;
     margin-top: 16px;
     
-}  
+} 
+
 .offers__content-cards::-webkit-scrollbar { 
-  width: 0px;
+    width: 0px;
 } 
 
 .offers__content-cards::-webkit-scrollbar-track {
     background-color: transparent;
-  }
+}
   
 .offers__content-cards::-webkit-scrollbar-thumb {
     background-color: rgb(230, 230, 230);    /* color of the scroll thumb */
     border-radius: 20px;     
-  }
+}
+
+.erro__content {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 86px;
+}
+
+.erro__content h1 {
+  margin-top: 30px;
+}
+
+.erro__img {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
 
 
-@media(max-width: 1114px) {
+@media(max-width: 1020px) {
     .offers__content-cards::-webkit-scrollbar { 
         display: none;
     }
+}
+
+@media(min-width: 768px) {
+
+    .erro__content {
+      margin-bottom: 16px;
+  }
 }

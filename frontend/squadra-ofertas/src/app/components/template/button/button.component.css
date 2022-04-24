@@ -15,8 +15,27 @@
     height: 56px;
 }
 
-.buttons__content-card {
+.buttons__conten-pay {
+    width: 100%;
+    margin-top: 40px ;
     
+}
+
+.buttons__pay {
+    width: 100%;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttons__img-pay {
+    width: 30px;
+    margin-right: 20px;
+}
+
+.buttons__content-card {
+    width: 100%;
 }
 
 .buttons__card {

@@ -1,17 +1,59 @@
 <div class="detail__container">
     <div class="detail__content-header">
         <div class="detail__content-img">
-            <img class="detail__img" src="assets/imgs/chef-icon.svg" alt="">
-
+            <div class="detail__carrosel">
+                <img src="assets/imgs/{{urlImg}}" alt="SQUADRA TESTE" />
+                <div class="detail__carrosel-img">
+                  <button class="active" (click)="selectImg(1)" type="button">
+                    <img src="assets/imgs/cafe-manha.svg" alt="SQUADRA TESTE" />
+                  </button>
+                  <button (click)="selectImg(2)"type="button">
+                    <img src="assets/imgs/hamburgue.svg" alt="SQUADRA TESTE" />
+                  </button>
+                  <button (click)="selectImg(3)" type="button">
+                    <img src="assets/imgs/entreterimento-icon.svg" alt="SQUADRA TESTE" />
+                  </button>
+                </div>
+            </div>
         </div>
-        <div>
-            <h1>teste de hoteis</h1>
-            <span>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem hic, nam nisi, eos fugiat quas obcaecati eaque voluptatibus maxime sit maiores doloremque, iusto ducimus officia? Autem quos magnam voluptates dolorem!
-            </span>
+        <div class="detail__content-text">
+            <h1 class="detail__title">{{ Offers.titulo }}</h1>
+            <div class="detail__content-description">
+               <p>
+                {{ Offers.descricaoBreve }}
+               </p> 
+            </div>
+            <div class="detail__content-value">
+               <span class="detail__description-value">
+                 Por apenas
+               </span>           
+                <span class="detail__value">
+                {{ Offers.valor | currency}}  
+                </span>  
+            </div>
+            <app-button
+                [type]="'flat'"
+                [label]="'Comprar'"
+                (click)="addOfferToCart(Offers)"
+            ></app-button>
+            <div class="detail__link-back">
+                <a  routerLink="/offers">Voltar</a>
+            </div>
+            
         </div>
     </div>
-    <div>
-
+    <div class="detail__content-info">
+        <div>
+            <h3>Detalhes da Oferta</h3>
+            <div *ngFor="let detalhe of Offers.detalhes" class="detail__content-highlights">
+                <mat-icon class="detail__detalhe-icon">check</mat-icon> {{ detalhe }}
+            </div>
+        </div>
+        <div>
+           <h3>Destaques da Oferta</h3>
+            <div *ngFor="let destaque of Offers.destaques" class="detail__content-highlights">
+                <mat-icon class="detail__destaque-icon">star_border</mat-icon> {{ destaque }}
+            </div>
+        </div>
     </div>
 </div>

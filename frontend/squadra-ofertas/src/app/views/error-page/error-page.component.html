@@ -1,12 +1,14 @@
-<div>
-    <div>
-        <img src="assets/imgs/error-page.svg" alt="">
+<div class="error__container">
+    <div class="error__content-img">
+        <img class="error__img" src="assets/imgs/error-page.svg" alt="">
     </div>
-    <div>
+    <div class="error__text">
         <h1>OPS!</h1>
         <h2>Vamos tentar novamente?</h2>
-        <button>
-            Inicio
-        </button>
     </div>
+    <app-button
+        [type]="'flat'"
+        [label]="'Voltar ao início'"
+        (click)="goHome()"
+        ></app-button>
 </div>

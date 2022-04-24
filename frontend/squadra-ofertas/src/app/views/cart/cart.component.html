@@ -1,0 +1,61 @@
+<div class="cart__container">
+    <div class="cart__content-summary">
+        <h2>Resumo da compra</h2>
+
+        <div class="cart__content-request">
+          <div *ngIf="items().length">
+            <div   class="cart__request" *ngFor="let offer of items()">
+              <span>{{ offer.titulo }} </span> 
+              <span class="cart__request-value"><b>{{ offer.valor | currency }}</b><a class="cart__request-link" (click)="removeOffer(offer)"><mat-icon class="cart__remove-icon">close</mat-icon></a></span>
+            </div> 
+          </div>
+          <div class="cart__content-empty" *ngIf="items().length === 0">
+            <img class="cart__empty-img" src="assets/imgs/cart-empty.svg" alt="">
+            <h4>O carrinho está vazio</h4>
+        </div>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="cart__content-total">
+           <span>Total </span> <span>{{ total() | currency }}</span>
+        </div>
+    </div>
+    <div class="cart__content-pay" *ngIf="items().length">
+        <h2>Pagamento</h2>
+        <form action="" class="cart__content-form">
+
+            <mat-form-field appearance="legacy">
+                <mat-label>Número do cartão</mat-label>
+                <input matInput placeholder="Número impresso no cartão" maxlength="16">
+              </mat-form-field>
+              <mat-form-field appearance="legacy">
+                <mat-label>Nome cartão</mat-label>
+                <input matInput placeholder="Nome impresso no cartão" type="text" maxlength="30">
+              </mat-form-field>
+              <div class="cart__form-group">
+                <mat-form-field appearance="legacy">
+                    <mat-label>Validade</mat-label>
+                    <input matInput type="date" placeholder="Validade do cartão">
+                  </mat-form-field>
+                  <mat-form-field appearance="legacy">
+                    <mat-label>Código CVV</mat-label>
+                    <input matInput placeholder="Código CVV" maxlength="3">
+                  </mat-form-field>
+              </div>
+              <app-button
+                [type]="'pay'"
+                [label]="'Pagar agora!'"
+              ></app-button>
+              <div class="cart__link-back">
+                <a  routerLink="/offers">Voltar</a>
+            </div>
+        </form>
+    </div>
+    <div class="cart__empty-button"  *ngIf="items().length === 0">
+      <app-button
+      [type]="'flat'"
+      [label]="'Começar a comprar'"
+      routerLink="/offers"
+    ></app-button>
+    </div>
+    
+</div>
