@@ -45,8 +45,8 @@ git clone `https://github.com/Ivan-Vidal/Teste-Squadra-Front.git`
 #### Download dependências
 `npm install`
 
-#### Rode o Serve
-`ng serve`
+#### Rode o Servidor
+`ng serve` ou `npm start`
 
 #### Navegue até o arquivo
 `db.json`
