@@ -1,5 +1,5 @@
 <div class="offers__container">
-    <main class="offers__main-content">
+    <main class="offers__main-content" *ngIf="!erroMessage">
         <div>
             <h2>Hoteis</h2>
             <mat-divider></mat-divider>
@@ -55,5 +55,19 @@
             
         </div>
     </main>
-    <button routerLink="/home"> voltar </button>
+    <div  *ngIf="erroMessage">
+        <div class="erro__content">
+            <img src="assets\imgs\serve-down.svg" class="erro__img" alt="">
+
+            <h1>OPS!</h1>
+            <h3>O nosso sistema está <br> fora do ar no momento</h3>
+            <h5>Tente novamente mais tarde</h5>
+        </div>
+        <app-button 
+            [label]="'Voltar ao inicio'"
+            [type]="'flat'"
+            routerLink="/home"
+        ></app-button>
+    </div>
+    
 </div>

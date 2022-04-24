@@ -1,0 +1,129 @@
+.cart__container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 24px;
+    height: auto;
+}
+
+.cart__content-summary {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 56px;
+}
+
+.cart__content-request {
+    height: 270px;
+    overflow: overlay;
+}
+
+.cart__content-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.cart__empty-img {
+    width: 100%;
+    max-width: 200px;
+}
+
+.cart__empty-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart__request {
+    margin: 26px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+}
+
+.cart__request-value {
+    display: flex;
+    align-items: center;
+}
+
+.cart__request-link {
+    display: flex;
+    align-items: center;
+    margin-left: 6px;
+}
+
+.cart__remove-icon {
+    font-size: 18px;
+    color: red;
+    display: flex;
+    align-items: center;
+}
+
+.cart__form-group {
+    display: flex;
+    flex-direction: column;   
+}
+
+.cart__content-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.cart__content-total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    margin-top: 16px;
+    padding: 0 34px 0 24px;
+}
+
+.cart__link-back {
+    text-align: center;
+    margin-top: 16px;
+    margin-bottom: 23px;
+}
+
+.cart__link-back a {
+    text-decoration: none;
+    color: rgb(117, 118, 119);
+    font-size: 16px;
+}
+
+@media(min-width:768px) {
+    .cart__container {
+        flex-direction: row-reverse;
+    }
+
+    .cart__content-request {
+        height: 470px;
+    }
+
+    .cart__content-pay {
+        width: 100%;
+        max-width: 600px;
+        margin-right: 70px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cart__content-form {
+        margin-top: 60px;
+    }
+
+    .cart__form-group {
+        flex-direction: row;
+        align-items: center;   
+        justify-content: space-between; 
+    }
+
+    .cart__content-summary {
+        border-left: 1px solid black;
+        padding: 0 12px;
+        margin-top: 16px;
+
+        
+    }
+}
