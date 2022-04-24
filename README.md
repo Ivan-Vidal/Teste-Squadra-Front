@@ -6,9 +6,9 @@
 
 ## 🖥 Preview
 
-
-  Demo disponivél em: `https://github.com/Ivan-Vidal/Teste-Squadra-Front.git`
-
+<p align = "center">
+  Demo disponivél em: https://teste-squadra-front-m22cpnpul-ivan-vidal.vercel.app/home
+</p>
 
 ---
 
