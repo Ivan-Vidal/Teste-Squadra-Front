@@ -8,18 +8,18 @@ import { Observable } from 'rxjs';
 })
 export class ProductService {
   baseUrl = "http://localhost:3004/ofertas";
-
+  
   constructor(private http: HttpClient) {
-
+    
   }
-
+  
   getAllProducts(): Observable<any> {
     return this.http.get(this.baseUrl)
-    }
-
-    getProductId(id: number): Observable<any> {
-      return this.http.get(`${this.baseUrl}/${id}`)
-    }
-    
+  }
+  
+  getProductId(id: number): Observable<any> {
+    return this.http.get(`${this.baseUrl}/${id}`)
+  }
+  
   
 }

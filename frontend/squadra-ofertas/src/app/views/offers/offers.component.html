@@ -7,16 +7,15 @@
                 <div  *ngFor="let offer of allOffers">
                     <div *ngIf="offer.categoria.id === 1">
                         <app-card-offer
-                            [type]="'hotel'"
-                            [title]="offer.titulo"
-                            [description]="offer.descricaoBreve"
-                            [price]="offer.valor"
-                            [id]="offer.id"
+                        [type]="'hotel'"
+                        [title]="offer.titulo"
+                        [description]="offer.descricaoBreve"
+                        [price]="offer.valor"
+                        [id]="offer.id"
                         ></app-card-offer>
                     </div>
                 </div>
             </div>
-            
             <div>
                 <h2>Gastronomia</h2>
                 <mat-divider></mat-divider>
@@ -24,11 +23,11 @@
                     <div  *ngFor="let offer of allOffers"  >
                         <div *ngIf="offer.categoria.id === 2">
                             <app-card-offer
-                                [type]="'rest'"
-                                [title]="offer.titulo"
-                                [description]="offer.descricaoBreve"
-                                [price]="offer.valor"
-                                [id]="offer.id"
+                            [type]="'rest'"
+                            [title]="offer.titulo"
+                            [description]="offer.descricaoBreve"
+                            [price]="offer.valor"
+                            [id]="offer.id"
                             ></app-card-offer>
                         </div>
                     </div>
@@ -41,33 +40,29 @@
                     <div  *ngFor="let offer of allOffers"  >
                         <div *ngIf="offer.categoria.id === 3">
                             <app-card-offer
-                                [type]="'entr'"
-                                [title]="offer.titulo"
-                                [description]="offer.descricaoBreve"
-                                [price]="offer.valor"
-                                [id]="offer.id"
+                            [type]="'entr'"
+                            [title]="offer.titulo"
+                            [description]="offer.descricaoBreve"
+                            [price]="offer.valor"
+                            [id]="offer.id"
                             ></app-card-offer>
                         </div>
                     </div>
                 </div>
             </div>
-        
-            
         </div>
     </main>
     <div  *ngIf="erroMessage">
         <div class="erro__content">
             <img src="assets\imgs\serve-down.svg" class="erro__img" alt="">
-
             <h1>OPS!</h1>
             <h3>O nosso sistema está <br> fora do ar no momento</h3>
             <h5>Tente novamente mais tarde</h5>
         </div>
         <app-button 
-            [label]="'Voltar ao inicio'"
-            [type]="'flat'"
-            routerLink="/home"
+        [label]="'Voltar ao inicio'"
+        [type]="'flat'"
+        routerLink="/home"
         ></app-button>
     </div>
-    
 </div>

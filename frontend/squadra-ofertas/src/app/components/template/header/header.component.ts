@@ -10,26 +10,26 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
   
   counter: number = 0
-
+  
   constructor(private cartService: CartService,
     private route: Router) {
-    this.cartService.lengthItems$.subscribe((length: number) => {
-      this.counter = length
-    })  //subscribe para pegar o valor do length do carrinho
-  }
-
-  ngOnInit(): void {
-    let cartSession = sessionStorage.getItem("cart")
-    cartSession = cartSession != null ? JSON.parse(cartSession) : []
-    if (cartSession != null) {
-      this.cartService.setLengthItems(cartSession.length)
+      this.cartService.lengthItems$.subscribe((length: number) => {
+        this.counter = length
+      })  //subscribe para pegar o valor do length do carrinho
     }
-
-
+    
+    ngOnInit(): void {
+      let cartSession = sessionStorage.getItem("cart")
+      cartSession = cartSession != null ? JSON.parse(cartSession) : []
+      if (cartSession != null) {
+        this.cartService.setLengthItems(cartSession.length)
+      }
+      
+      
+    }
+    
+    navigateToCart() {
+      this.route.navigate(['cart'])
+    }
+    
   }
-
-  navigateToCart() {
-    this.route.navigate(['cart'])
-  }
-
-}
