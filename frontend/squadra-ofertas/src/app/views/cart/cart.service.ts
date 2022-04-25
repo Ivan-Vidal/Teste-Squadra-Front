@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
 import {Injectable} from '@angular/core'
 import { Offers } from 'src/app/components/product/product.model'
@@ -8,15 +8,29 @@ import { Offers } from 'src/app/components/product/product.model'
 export class CartService {
 
     items: Offers[] = []
-    counter: any;
+    counter!: number;
+    public itemCart$ = new Subject<number>()
+
+
+    ngOnInit(): void {
+        let cartSession = sessionStorage.getItem("cart");
+    
+        if(cartSession != null){
+          this.items = JSON.parse(cartSession);
+          this.counter = this.items.length
+          console.log(this.counter)
+          this.setItemCart(this.counter)
+        }        
+    }
+
+   
+    setItemCart(value: number) {
+        this.itemCart$.next(value); 
+      }
 
     addOfferCart(item:Offers){
         this.items.push(item)
         sessionStorage.setItem("cart",JSON.stringify(this.items))
-    }
-
-    itemsCart(): Observable<number> {
-        return  new Observable()
     }
 
     total() :number{

@@ -34,6 +34,5 @@ imgType!: string
 
   purchaseOffer(id: number) {
     this.route.navigate(['details', id])
-    console.log(id)
   }
 }

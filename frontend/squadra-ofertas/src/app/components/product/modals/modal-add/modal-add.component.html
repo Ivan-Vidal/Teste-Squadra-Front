@@ -1,15 +1,18 @@
 <div class="modal__container">
-    <div mat-dialog-content><mat-icon class="modal__">add_shopping_cart</mat-icon></div>
-    <h1 mat-dialog-title>Oferta Adicionada</h1>
-    <div mat-dialog-actions class="modal__group-button">
-        <app-button
-        [type]="'card'"
-        [label]="'Finalizar a compra'"
-        (click)="goCart()"
-        ></app-button>
-        <div class="modal__link-back">
-            <a   mat-dialog-close routerLink="/offers">Continuar comprando</a>
+    <div class="modal__group-add">
+        <div mat-dialog-content>
+            <mat-icon class="modal__icon-cart">add_shopping_cart</mat-icon>
         </div>
+        <div class="modal__title">
+            <h1 mat-dialog-title>Oferta Adicionada ao carrinho</h1>
+        </div>
+        <div mat-dialog-actions>
+            <app-button
+            [type]="'close'"
+            [label]="'Finalizar a compra'"
+            (click)="goCart()"
+            ></app-button>
+        </div>   
     </div>
 </div>
 

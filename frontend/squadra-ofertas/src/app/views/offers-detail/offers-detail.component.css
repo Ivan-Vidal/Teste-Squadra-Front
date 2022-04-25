@@ -22,7 +22,13 @@
     margin-top: 16px;
   }
 
-.detail__carrosel > img {
+.detail__carrosel-first {
+    width: 100%;
+    max-width: 600px;
+    object-fit: cover;
+}
+
+.detail__carrosel-first img {
     width: 100%;
     object-fit: cover;
     
