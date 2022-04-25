@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  counter: number = 0
+  counter!: number;
 
   constructor(private cartService: CartService, private route: Router) { }
 
@@ -19,9 +19,16 @@ export class HeaderComponent implements OnInit {
     
     if(cartSession != null){
       this.cartService.items = JSON.parse(cartSession);
+      this.cartService.itemCart$.subscribe(
+        next => {
+          this.counter = next
+        },
+        error => {
+          console.log(error)
+        }
+      )
     }
-
-    this.counter = this.cartService.items.length
+     
   }
 
   navigateToCart() {

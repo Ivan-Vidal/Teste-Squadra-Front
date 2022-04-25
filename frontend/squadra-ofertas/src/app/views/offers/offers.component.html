@@ -4,7 +4,7 @@
             <h2>Hoteis</h2>
             <mat-divider></mat-divider>
             <div class="offers__content-cards" >
-                <div  *ngFor="let offer of allOffers"  >
+                <div  *ngFor="let offer of allOffers">
                     <div *ngIf="offer.categoria.id === 1">
                         <app-card-offer
                             [type]="'hotel'"
@@ -35,7 +35,7 @@
                 </div>
             </div>
             <div>
-                <h2>Entreterimento</h2>
+                <h2>Entretenimento</h2>
                 <mat-divider></mat-divider>
                 <div class="offers__content-cards" >
                     <div  *ngFor="let offer of allOffers"  >

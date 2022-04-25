@@ -6,12 +6,20 @@
           <div *ngIf="items().length">
             <div   class="cart__request" *ngFor="let offer of items()">
               <span>{{ offer.titulo }} </span> 
-              <span class="cart__request-value"><b>{{ offer.valor | currency }}</b><a class="cart__request-link" (click)="removeOffer(offer)"><mat-icon class="cart__remove-icon">close</mat-icon></a></span>
+              <span class="cart__request-value"><b>{{ offer.valor | currency }}</b><a class="cart__request-link" (click)="removeOffer(offer)"><mat-icon class="cart__remove-icon">delete</mat-icon></a></span>
             </div> 
           </div>
           <div class="cart__content-empty" *ngIf="items().length === 0">
             <img class="cart__empty-img" src="assets/imgs/cart-empty.svg" alt="">
             <h4>O carrinho está vazio</h4>
+            <div class="cart__empty-desk">
+              <app-button
+            [type]="'flat'"
+            [label]="'Começar a comprar'"
+            routerLink="/offers"
+          ></app-button>
+            </div>
+            
         </div>
         </div>
         <mat-divider></mat-divider>
@@ -51,11 +59,14 @@
         </form>
     </div>
     <div class="cart__empty-button"  *ngIf="items().length === 0">
-      <app-button
-      [type]="'flat'"
-      [label]="'Começar a comprar'"
-      routerLink="/offers"
-    ></app-button>
+      <div class="cart__empty-mobile">
+        <app-button
+          [type]="'flat'"
+          [label]="'Começar a comprar'"
+          routerLink="/offers"
+        ></app-button>
+      </div>
+      
     </div>
     
 </div>

@@ -8,7 +8,7 @@
 
     <div *ngIf="type === 'card'" class="buttons__content-card" >
         <button class="buttons__card" 
-        mat-flat-button mat-dialog-close
+        mat-flat-button
         color="primary"
         > {{ label }}
         </button> 
@@ -26,6 +26,10 @@
             <img class="buttons__img-pay" src="assets/imgs/credit-card-white.png" alt="">
             {{ label }}
         </button>
+    </div>
+
+    <div *ngIf="type === 'close'" class="buttons__content-close">
+        <button mat-button mat-dialog-close color="primary">{{label}}</button>
     </div>
    
 </div>

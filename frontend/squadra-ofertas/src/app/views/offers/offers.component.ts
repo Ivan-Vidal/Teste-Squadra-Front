@@ -17,8 +17,7 @@ export class OffersComponent implements OnInit {
      this.productService.getAllProducts().subscribe(
       next =>   this.allOffers = next,
       error => {console.log(error) 
-      this.erroMessage = error} ,
-      () => console.log(this.allOffers.length) )
+      this.erroMessage = error})
 
   }
 

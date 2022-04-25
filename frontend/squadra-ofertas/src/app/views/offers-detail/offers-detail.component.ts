@@ -1,3 +1,4 @@
+import { Subject } from 'rxjs';
 import { ModalAddComponent } from '../../components/product/modals/modal-add/modal-add.component';
 import { Offers } from './../../components/product/product.model';
 import { ProductService } from 'src/app/components/product/product.service';
@@ -14,6 +15,7 @@ import { MatDialog } from '@angular/material/dialog';
 export class OffersDetailComponent implements OnInit {
   Offers!: Offers;
   urlImg: string = 'cafe-manha.svg'
+  counter!: number;
 
   constructor(private productService: ProductService, private route: ActivatedRoute, private router: Router, private cartService: CartService, private dialog: MatDialog) { }
 
@@ -27,13 +29,13 @@ export class OffersDetailComponent implements OnInit {
       }
     )
   }
-
-
     addOfferToCart(offer: Offers) {
       this.cartService.addOfferCart(offer)
+      this.cartService.setItemCart(this.cartService.counter)
+      console.log(this.counter)
       this.openDialog()
       this.router.navigate(['offers'])
-      console.log(offer)    
+      console.log(offer)       
   }
 
   selectImg(id: number) {
@@ -49,8 +51,10 @@ export class OffersDetailComponent implements OnInit {
   }
 
   openDialog() {
-    this.dialog.open(ModalAddComponent);
-  }
+    this.dialog.open(ModalAddComponent, {
+      width: '300px',
+      height: '300px'
+    });
 }
 
-
+}

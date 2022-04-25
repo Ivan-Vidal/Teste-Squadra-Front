@@ -2,26 +2,27 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 200px;
-    width: 200px;
-    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    justify-content: space-around;
     
 }
 
-.modal__group-button {
+.modal__icon-cart {
+    font-size: 40px;
+    color: cadetblue;
+}
+
+.modal__group-add {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100%;
+} 
 
-.modal__link-back {
+.modal__title {
     text-align: center;
-    margin-top: 16px;
-    margin-bottom: 23px;
-}
 
-.modal__link-back a {
-    text-decoration: none;
-    color: rgb(117, 118, 119);
-    font-size: 16px;
 }

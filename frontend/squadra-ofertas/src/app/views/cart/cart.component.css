@@ -92,6 +92,17 @@
     font-size: 16px;
 }
 
+.cart__empty-desk {
+    display: none;
+    width: 100%;
+    max-width: 300px;
+}
+
+.cart__empty-mobile {
+    display: block;
+    width: 100%;
+}
+
 @media(min-width:768px) {
     .cart__container {
         flex-direction: row-reverse;
@@ -122,8 +133,14 @@
     .cart__content-summary {
         border-left: 1px solid black;
         padding: 0 12px;
-        margin-top: 16px;
+        margin-top: 16px;        
+    }
 
-        
+    .cart__empty-desk {
+        display: block;
+    }
+
+    .cart__empty-mobile {
+        display: none;
     }
 }
