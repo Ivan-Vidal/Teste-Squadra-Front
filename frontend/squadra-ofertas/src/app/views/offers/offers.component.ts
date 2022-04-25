@@ -16,8 +16,10 @@ export class OffersComponent implements OnInit {
    ngOnInit() {
      this.productService.getAllProducts().subscribe(
       next =>   this.allOffers = next,
-      error => {console.log(error) 
-      this.erroMessage = error})
+      (error) => {
+        console.log(error)
+        this.erroMessage = error
+      })
 
   }
 

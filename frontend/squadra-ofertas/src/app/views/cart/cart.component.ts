@@ -1,6 +1,9 @@
 import { Offers } from './../../components/product/product.model';
 import { CartService } from './cart.service';
 import { Component, OnInit } from '@angular/core';
+import { ModalRemoveComponent } from 'src/app/components/product/modals/modal-remove/modal-remove.component';
+import { MatDialog } from '@angular/material/dialog';
+import { ModalSucessComponent } from 'src/app/components/product/modals/modal-sucess/modal-sucess.component';
 
 @Component({
   selector: 'app-cart',
@@ -10,27 +13,40 @@ import { Component, OnInit } from '@angular/core';
 export class CartComponent implements OnInit {
 
   removeResult: boolean = false;
+  items: Offers[] = []
 
-  constructor(private cartService: CartService) { }
+  constructor(private cartService: CartService,
+    private dialog: MatDialog) { }
 
   ngOnInit(): void {
-      let cartSession = sessionStorage.getItem("cart");
-    
-      if(cartSession != null){
-        this.cartService.items = JSON.parse(cartSession);
-      }
+    let cartSession = sessionStorage.getItem("cart");
+    if (cartSession != null) {
+      this.cartService.items = JSON.parse(cartSession);
+      this.items = this.cartService.items
     }
 
-    items(): Offers[] {
-      return this.cartService.items;
-    }
-    
-    total(): number {
-       return this.cartService.total()
-    }
+    this.cartService.lengthItems$.subscribe(() => {
+      this.items = this.cartService.items
+    })  //subscribe para pegar o valor do length do carrinho
+  }
 
-    removeOffer(offer: Offers) {
-        return this.cartService.removeItem(offer)
+  total(): number {
+    return this.cartService.total()
+  }
+
+  removeOffer(offer: Offers) {
+    const dialogRef = this.dialog.open(ModalRemoveComponent);
+    dialogRef.afterClosed().subscribe((result: any) => {
+      if (result) {
+        this.cartService.removeItem(offer)
       }
-        
+    });
+  }
+
+  onSubmit(offer: Offers) {
+    this.dialog.open(ModalSucessComponent) 
+    this.cartService.removeItem(offer);
+    
+  }
+    
 }

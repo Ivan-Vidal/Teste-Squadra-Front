@@ -1,0 +1,15 @@
+.remove__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.remove__content-title {
+    text-align: center;
+}
+
+.mat-dialog-actions.remove__content-button {
+        width: 100%;
+        justify-content: space-between;
+        display: flex;
+        margin-top: 20px;
+}

@@ -8,27 +8,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  
+  counter: number = 0
 
-  counter!: number;
-
-  constructor(private cartService: CartService, private route: Router) { }
+  constructor(private cartService: CartService,
+    private route: Router) {
+    this.cartService.lengthItems$.subscribe((length: number) => {
+      this.counter = length
+    })  //subscribe para pegar o valor do length do carrinho
+  }
 
   ngOnInit(): void {
-
-    let cartSession = sessionStorage.getItem("cart");
-    
-    if(cartSession != null){
-      this.cartService.items = JSON.parse(cartSession);
-      this.cartService.itemCart$.subscribe(
-        next => {
-          this.counter = next
-        },
-        error => {
-          console.log(error)
-        }
-      )
+    let cartSession = sessionStorage.getItem("cart")
+    cartSession = cartSession != null ? JSON.parse(cartSession) : []
+    if (cartSession != null) {
+      this.cartService.setLengthItems(cartSession.length)
     }
-     
+
+
   }
 
   navigateToCart() {

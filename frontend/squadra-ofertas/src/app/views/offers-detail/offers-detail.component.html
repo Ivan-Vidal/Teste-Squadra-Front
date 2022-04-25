@@ -2,19 +2,14 @@
     <div class="detail__content-header">
         <div class="detail__content-img">
             <div class="detail__carrosel">
-                <div class="detail__carrosel-first">
-                    <img src="assets/imgs/{{urlImg}}" alt="SQUADRA TESTE" />
+                <div>
+                    <img class="detail__img" [src]="imgSelected" alt="SQUADRA TESTE" />
                 </div>
                 <div class="detail__carrosel-img">
-                  <button class="active" (click)="selectImg(1)" type="button">
-                    <img src="assets/imgs/cafe-manha.svg" alt="SQUADRA TESTE" />
-                  </button>
-                  <button (click)="selectImg(2)"type="button">
-                    <img src="assets/imgs/hamburgue.svg" alt="SQUADRA TESTE" />
-                  </button>
-                  <button (click)="selectImg(3)" type="button">
-                    <img src="assets/imgs/entreterimento-icon.svg" alt="SQUADRA TESTE" />
-                  </button>
+                    <button *ngFor="let img of imgs" [ngClass]="img === imgSelected ? 'active' : '' "
+                        (click)="selectImg(img)" type="button">
+                        <img [src]="img" alt="SQUADRA TESTE" />
+                    </button>
                 </div>
             </div>
         </div>
