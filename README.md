@@ -14,7 +14,7 @@
 ## 🖥 Preview
 
 <p align = "center">
-  Demo disponivél em: https://teste-squadra-front-m22cpnpul-ivan-vidal.vercel.app/home
+  Demo disponivél em: https://teste-squadra-front.vercel.app/home
 </p>
 
 ---
