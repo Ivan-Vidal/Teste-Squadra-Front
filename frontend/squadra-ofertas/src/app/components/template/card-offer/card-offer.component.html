@@ -9,7 +9,7 @@
     </div>
     <div class="card__content-description">
         <mat-card-content>
-           <p>{{ description }}</p>
+            <p>{{ description }}</p>
             
         </mat-card-content>
     </div>
@@ -17,12 +17,10 @@
         <span>{{ price | currency}}</span>
     </div>
     <div class="card__content-button">
-        
-            <app-button
-            [type]="'card'"
-            [label]="'Comprar'"
-            (click)="purchaseOffer(id)"
-            ></app-button>
-        
+        <app-button
+        [type]="'card'"
+        [label]="'Comprar'"
+        (click)="purchaseOffer(id)"
+        ></app-button>
     </div>
 </mat-card>
