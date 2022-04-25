@@ -14,8 +14,12 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class OffersDetailComponent implements OnInit {
   Offers!: Offers;
-  urlImg: string = 'cafe-manha.svg'
-  counter!: number;
+  imgSelected: string = 'assets/imgs/cafe-manha.svg'
+  imgs = [
+    'assets/imgs/cafe-manha.svg',
+    'assets/imgs/hamburgue.svg',
+    'assets/imgs/entreterimento-icon.svg'
+  ]
 
   constructor(private productService: ProductService, private route: ActivatedRoute, private router: Router, private cartService: CartService, private dialog: MatDialog) { }
 
@@ -31,23 +35,13 @@ export class OffersDetailComponent implements OnInit {
   }
     addOfferToCart(offer: Offers) {
       this.cartService.addOfferCart(offer)
-      this.cartService.setItemCart(this.cartService.counter)
-      console.log(this.counter)
       this.openDialog()
       this.router.navigate(['offers'])
       console.log(offer)       
   }
 
-  selectImg(id: number) {
-    if (id === 1) {
-      this.urlImg = 'cafe-manha.svg'
-    }
-    if (id === 2) {
-      this.urlImg = 'hamburgue.svg'
-    }
-    if (id === 3) {
-      this.urlImg = 'entreterimento-icon.svg'
-    }
+  selectImg(img: string) {
+    this.imgSelected = img
   }
 
   openDialog() {

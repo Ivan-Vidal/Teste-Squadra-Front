@@ -7,42 +7,36 @@ import { Offers } from 'src/app/components/product/product.model'
 @Injectable()
 export class CartService {
 
+    private lengthItemsSubject: Subject<number> = new Subject<number>()
+    public get lengthItems$(): Observable<number> {
+        return this.lengthItemsSubject.asObservable()
+    }
+
     items: Offers[] = []
-    counter!: number;
-    public itemCart$ = new Subject<number>()
+    counter: any;
 
-
-    ngOnInit(): void {
-        let cartSession = sessionStorage.getItem("cart");
-    
-        if(cartSession != null){
-          this.items = JSON.parse(cartSession);
-          this.counter = this.items.length
-          console.log(this.counter)
-          this.setItemCart(this.counter)
-        }        
+    setLengthItems(number: number) {
+        this.lengthItemsSubject.next(number)
     }
 
-   
-    setItemCart(value: number) {
-        this.itemCart$.next(value); 
-      }
-
-    addOfferCart(item:Offers){
+    addOfferCart(item: Offers) {
         this.items.push(item)
-        sessionStorage.setItem("cart",JSON.stringify(this.items))
+        sessionStorage.setItem("cart", JSON.stringify(this.items))
+        this.setLengthItems(this.items.length)
+
     }
 
-    total() :number{
+    total(): number {
         return this.items
-        .map(item => item.valor)
-        .reduce((prev, value)=> prev+value, 0)
+            .map(item => item.valor)
+            .reduce((prev, value) => prev + value, 0)
     }
 
-    removeItem(Offer: Offers){
-        this.items.splice(this.items.indexOf(Offer), 1)
+    removeItem(offer: Offers) {
+        this.items.splice(this.items.indexOf(offer), 1)
         //salva na sessão
-        sessionStorage.setItem("cart",JSON.stringify(this.items))   
+        sessionStorage.setItem("cart", JSON.stringify(this.items))
+        this.setLengthItems(this.items.length)
     }
 }
 

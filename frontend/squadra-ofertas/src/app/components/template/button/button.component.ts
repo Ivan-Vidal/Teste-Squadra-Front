@@ -6,13 +6,15 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./button.component.css']
 })
 export class ButtonComponent implements OnInit {
-  @Input() type!: 'flat' | 'icon' | 'card' | 'pay' | 'close';
+  @Input() type!: 'flat' | 'icon' | 'card' | 'pay' | 'close' | 'remove' | 'cancel';
   @Input() label!: string;
-  @Input() counter!: number;
+  @Input() counter!: any;
   constructor() { }
 
   ngOnInit(): void {
-    
+    if (this.counter === 0) {
+      this.counter = ''
+    } 
  
   }
 

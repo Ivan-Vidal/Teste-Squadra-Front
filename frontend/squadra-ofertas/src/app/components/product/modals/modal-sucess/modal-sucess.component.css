@@ -1,0 +1,26 @@
+.sucess__container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sucess__content-icon {
+    margin: 16px 0;
+}
+
+.sucess__icon {
+    width: 100%;
+    color: #11c76f;
+    font-size: 50px;
+}
+
+.sucess__content-title {
+    text-align: center;
+}
+
+.sucess__content-button {
+    width: 100%;
+    margin: 16px 0;
+    text-align: center;
+}

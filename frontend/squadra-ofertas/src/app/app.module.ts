@@ -29,6 +29,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input'
 import {MatDialogModule} from '@angular/material/dialog';
 import { ModalAddComponent } from './components/product/modals/modal-add/modal-add.component';
+import { ModalRemoveComponent } from './components/product/modals/modal-remove/modal-remove.component';
+import { ModalSucessComponent } from './components/product/modals/modal-sucess/modal-sucess.component';
 
 
 
@@ -48,6 +50,8 @@ registerLocaleData(ptBr);
     OffersDetailComponent,
     CartComponent,
     ModalAddComponent,
+    ModalRemoveComponent,
+    ModalSucessComponent,
     
   ],
   imports: [
