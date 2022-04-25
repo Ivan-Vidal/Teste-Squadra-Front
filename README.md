@@ -4,6 +4,10 @@
   <img src = "https://www.squadra.com.br/wp-content/themes/squadraTheme/img/logos-squadra/logo-white-4.png" width = "300">
 </p>
 
+<p align="center">
+  <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=15C3D6&labelColor=000000">
+</p>
+
 ## 🖥 Preview
 
 <p align = "center">
@@ -22,7 +26,7 @@
 
 The project is developed using the following technologies:
 
-- Angular 12.1.4
+- Angular 
 - HTML
 - CSS
 - JavaScript
@@ -53,6 +57,10 @@ git clone `https://github.com/Ivan-Vidal/Teste-Squadra-Front.git`
 
 #### Execute o comando
 `json-server --watch db.json --port 3004`
+
+## :memo: Licença
+
+Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
 
 
 #### Está Pronto, Abra seu navegador favorito e navegue até `https://localhost:4200/`
