@@ -25,6 +25,12 @@ export class CartService {
         this.setLengthItems(this.items.length)
         
     }
+
+    cleanCart() {
+        sessionStorage.clear()
+        this.setLengthItems(this.items.length)
+    
+    }
     
     total(): number {
         return this.items

@@ -43,9 +43,16 @@ export class CartComponent implements OnInit {
       });
     }
     
-    onSubmit(offer: Offers) {
-      this.dialog.open(ModalSucessComponent) 
-      this.cartService.removeItem(offer);
+    onSubmit() {
+      this.dialog.open(ModalSucessComponent);
+
+      while (this.items.length) {
+       
+       for (let offer of this.items) {
+        this.cartService.removeItem(offer)
+       }
+        
+      }
       
     }
     
