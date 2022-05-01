@@ -11,13 +11,6 @@
   <img src = "https://www.squadra.com.br/wp-content/themes/squadraTheme/img/logos-squadra/logo-white-4.png" width = "300">
 </p>
 
-## 🖥 Preview
-
-<p align = "center">
-  Demo disponivél em: https://teste-squadra-front.vercel.app/home
-</p>
-
----
 
 ## 📖 Sobre
 
