@@ -73,4 +73,4 @@ Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para
 
 ---
 
-Developed with 💜 by Ivan Vidal
+Desenvolvido com 💜
